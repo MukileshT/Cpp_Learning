@@ -1,0 +1,146 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+/*----------------------------------------------------------------------------------------------*/
+/* Single Inheritance*/
+class Base{
+    public:
+        void baseMethod(){
+            //Code
+        }
+};
+class Derived : public Base{
+    public:
+        void derivedMethod(){
+            //Code
+        }
+};
+
+int main4(){
+    Derived obj;
+    obj.baseMethod();       //Allowed
+    obj.derivedMethod();    //Allowed
+    return 0;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*Multiple Inheritance*/
+class Base1{
+    public:
+        void base1Method(){
+            //Code
+        }
+};
+class Base2{
+    public:
+        void base2Method(){
+            //Code
+        }
+};
+class Derived1 : public Base1, public Base2{
+    public :
+        void derivedMethod(){
+            //Code
+        }
+};
+
+int main3(){
+    Derived1 obj1;
+    obj1.base1Method();      //Allowed
+    obj1.base2Method();      //Allowed
+    obj1.derivedMethod();    //Allowed
+    return 0;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*multilevel Inheritance*/
+class Base3{
+    public:
+        void baseMethod(){
+            //code
+        }
+};
+class Intermediate : public Base3{
+    public:
+        void intermediateMethod(){
+            //code
+        }
+};
+class Derived2 : public Intermediate{
+    public:
+        void derivedMethod(){
+            //code
+        }
+};
+
+int main2(){
+    Derived2 obj2;
+    obj2.baseMethod();
+    obj2.intermediateMethod();
+    obj2.derivedMethod();
+    return 0;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*Hierarchical Inheritance*/
+class Base4{
+    public:
+        void baseMethod(){
+            //Code
+        }
+};
+class Derived3 : public Base4{
+    public:
+        void derived1Method(){
+            //Code
+        }
+};
+class Derived4 : public Base4{
+    public:
+        void derived2Method(){
+            //Code
+        }
+};
+
+int main1(){
+    Derived3 obj3;
+    Derived4 obj4;
+    obj3.baseMethod();
+    obj3.derived1Method();
+    obj4.baseMethod();
+    obj4.derived2Method();
+    return 0;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*Hybrid Inheritance*/
+class Base5{
+    public:
+        void baseMethod(){
+            //Code
+        }
+};
+class Derived5 : public Base5{
+    public:
+        void derived1Method(){
+            //Code
+        }
+};
+class Derived6 : public Base5{
+    public:
+        void derived2Method(){
+            //code
+        }
+};
+class Derived7 : public Derived5, public Derived6{
+    public:
+        void derived3Method(){
+            //Code
+        }
+};
+
+int main(){
+    Derived7 obj5;
+    obj5.derived1Method();
+    obj5.derived2Method();
+    obj5.derived3Method();
+    return 0;
+}
+/*----------------------------------------------------------------------------------------------*/
